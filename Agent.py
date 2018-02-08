@@ -23,13 +23,7 @@ class Agent:
         self.id_str = id_str
         
         
-    def show_info(self):
+    def getInfo(self):
         return "Agent #" + str(self.id) + "\nLocation :\n\tCountry : " + self.country_name + "\n\tGPS : (" + str(self.latitude) + ", " + str(self.longitude) + ")\nDemographics :\n\tSex : " + self.sex + "\n\tDate of Birth : " + self.date_of_birth + "\n\tAge : " + str(self.age) + "\n\tLanguage : " + self.language + "\n\tReligion : " + self.religion + "\n\tIncome : $" + str(self.income) + "\n\tInternet : " + str(self.internet) + "\nPersonality :\n\tOpenness : " + str(self.openness) + "\n\tConcientiousness : " + str(self.conscientiousness) + "\n\tExtraversion : " + str(self.extraversion) + "\n\tAgreeableness : " + str(self.agreeableness) + "\n\tNeuroticism : " + str(self.neuroticism) + "\nMapping :\n\tAlpha ID : " + self.id_str
 
-#get a random agent
-url = "http://pplapi.com/random.json"
-result = json.loads(urllib.request.urlopen(url).read().decode())
-jsonAgent = Agent(result['id'], result['country_name'], result['latitude'], result['longitude'], result['sex'], result['date_of_birth'],
-                  result['age'], result['language'], result['religion'], result['income'], result['internet'], result['openness'],
-                  result['conscientiousness'], result['extraversion'], result['agreeableness'], result['neuroticism'], result['id_str'])
-print(jsonAgent.show_info())
+
